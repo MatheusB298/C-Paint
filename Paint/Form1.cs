@@ -23,6 +23,15 @@ namespace Paint
         {
             InitializeComponent();
             this.MouseClick += Form1_MouseClick;
+
+            string pasta = Path.Combine(
+            AppDomain.CurrentDomain.BaseDirectory,
+            "Archives"
+             );
+
+            Directory.CreateDirectory(pasta);
+
+            caminho = Path.Combine(pasta, "Data.dat");
         }
         bool desenharlinha = false;
         int contadorlinha = 1;
@@ -30,7 +39,7 @@ namespace Paint
         int contadorretangulo = 1;
         int contadorlosango = 1;
         int contadortriangulo = 1;
-        String caminho = @"C:\Arquivos\dados.dat";
+        String caminho;
         bool desenhartriangulo = false;
         bool desenharpentagono = false;
         int espessuralinha = 1;
